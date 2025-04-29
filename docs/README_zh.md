@@ -10,9 +10,7 @@ import { JsonRpcBuilder, CounterIdGenerator } from "@wwog/jsonRpc";
 //or
 import JsonRpcBuilder, { CounterIdGenerator } from "@wwog/jsonRpc";
 
-//更换id生成器
-const counterIdGenerator = new CounterIdGenerator();
-JsonRpcBuilder.setIdGenerator(counterIdGenerator);
+const builder = new JsonRpcBuilder();
 ```
 
 1. **类型定义**：

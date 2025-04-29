@@ -1,3 +1,5 @@
+import {JsonRpcIdGenerator} from './types'
+
 function uuidV4() {
   if (typeof globalThis.crypto !== 'undefined') {
     if (typeof globalThis.crypto.randomUUID === 'function') {
@@ -25,10 +27,6 @@ function uuidV4() {
     const v = c === 'x' ? r : (r & 0x3) | 0x8
     return v.toString(16)
   })
-}
-
-export abstract class JsonRpcIdGenerator {
-  abstract next(): string | number
 }
 
 /**

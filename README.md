@@ -10,9 +10,7 @@ import { JsonRpcBuilder, CounterIdGenerator } from "@wwog/jsonRpc";
 // or
 import JsonRpcBuilder, { CounterIdGenerator } from "@wwog/jsonRpc";
 
-// Change the ID generator
-const counterIdGenerator = new CounterIdGenerator();
-JsonRpcBuilder.setIdGenerator(counterIdGenerator);
+const builder = new JsonRpcBuilder();
 ```
 
 1. **Type Definitions**:

@@ -1,3 +1,9 @@
+export abstract class JsonRpcIdGenerator {
+  abstract next(): string | number
+}
+
+export type JsonRpcIdGeneratorConstructor = new () => JsonRpcIdGenerator
+
 export type JsonRpcVersion = '2.0'
 
 /**
@@ -23,8 +29,12 @@ export interface JsonRpcRequest<P extends JsonRpcParams> {
 export interface JsonRpcResponse<T> {
   jsonrpc: JsonRpcVersion
   id: JsonRpcId
-  result?: T
+  result?: T | null
   error?: JsonRpcError
+}
+
+export interface JsonRpcBuilderOptions {
+  idGenerator?: JsonRpcIdGenerator | JsonRpcIdGeneratorConstructor
 }
 
 export interface JsonRpcNotification<P extends JsonRpcParams> {
@@ -34,3 +44,23 @@ export interface JsonRpcNotification<P extends JsonRpcParams> {
 }
 
 export type JsonRpcBatchRequest = Array<JsonRpcRequest<any>>
+
+export interface JsonRpcRequestOptions {
+  idGenerator?: JsonRpcIdGenerator | JsonRpcIdGeneratorConstructor
+  timeout?: number
+  timeoutMessage?: string
+  postMessage: (message: any) => void
+  onMessage: (callback: (message: any) => void) => void
+}
+
+export type MethodHandler = (params: JsonRpcParams) => Promise<any> | any
+
+export interface MethodRegistry {
+  [method: string]: MethodHandler
+}
+
+export interface JsonRpcResponseOptions {
+  methodRegistry?: MethodRegistry
+  postMessage: (message: any) => void
+  onMessage: (callback: (message: any) => void) => void
+}
