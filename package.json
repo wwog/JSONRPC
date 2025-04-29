@@ -1,0 +1,49 @@
+{
+  "name": "@wwog/json_rpc",
+  "version": "1.0.0",
+  "description": "A JSON-RPC library",
+  "keywords": [
+    "json-rpc",
+    "rpc",
+    "remote procedure call",
+    "api"
+  ],
+  "homepage": "https://www.github.com/wwog",
+  "author": "wwog",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "unbuild",
+    "play": "jiti playground",
+    "format": "biome format --write src",
+    "check": "biome check --apply src",
+    "test": "pnpm check && pnpm test:types && vitest run --coverage",
+    "test:types": "tsc --noEmit --skipLibCheck",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "vitest": "^3.1.2",
+    "@vitest/coverage-v8": "^3.1.2",
+    "jiti": "^2.4.2",
+    "typescript": "^5.8.3",
+    "unbuild": "^3.5.0"
+  },
+  "engines": {
+    "node": ">= 20.0.0",
+    "pnpm": ">=8.15.0"
+  },
+  "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
+}
