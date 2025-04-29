@@ -9,6 +9,7 @@
     "api"
   ],
   "homepage": "https://www.github.com/wwog",
+  "bugs": "https://github.com/wwog/JSONRPC",
   "author": "wwog",
   "type": "module",
   "exports": {
