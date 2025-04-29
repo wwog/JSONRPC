@@ -1,5 +1,8 @@
 ### JsonRpc
 
+[![npm version](https://img.shields.io/npm/v/@wwog/json_rpc.svg)](https://www.npmjs.com/package/@wwog/json_rpc)
+[![ESM](https://img.shields.io/badge/📦-ESM%20only-brightgreen.svg)](https://nodejs.org/api/esm.html)
+
 [中文文档](./docs/README_zh.md)
 
 ```typescript
