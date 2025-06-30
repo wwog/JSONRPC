@@ -1,6 +1,6 @@
 {
   "name": "@wwog/json_rpc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A JSON-RPC library",
   "keywords": [
     "json-rpc",

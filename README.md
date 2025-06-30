@@ -10,7 +10,12 @@ import { JsonRpcBuilder, CounterIdGenerator } from "@wwog/jsonRpc";
 // or
 import JsonRpcBuilder, { CounterIdGenerator } from "@wwog/jsonRpc";
 
+//If you need id generation, instantiate it, otherwise use static methods
 const builder = new JsonRpcBuilder();
+builder.createRequest();
+
+//or
+JsonRpcBuilder.createRequest();
 ```
 
 1. **Type Definitions**:
